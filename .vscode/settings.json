@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": true
+  }
+}

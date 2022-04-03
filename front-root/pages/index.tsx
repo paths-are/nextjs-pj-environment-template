@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +14,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>Hello World</main>
+      <main className={styles.main}>
+        Hello World
+        <Stack spacing={2} direction="row">
+          <Button variant="text">Text</Button>
+          <Button variant="contained">Contained</Button>
+          <Button variant="outlined">Outlined</Button>
+        </Stack>
+      </main>
 
       <footer className={styles.footer}>
         <a
