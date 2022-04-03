@@ -2,13 +2,17 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import { useRecoilValue } from "recoil";
-import { sampleAtomValue } from "./about";
+
+import { atom, useRecoilValue } from "recoil";
+
+export const sampleAtomValue = atom({
+  key: "SampleAtomValue",
+  default: "Hello Atom!",
+});
 
 const Home: NextPage = () => {
   const sampleAtom = useRecoilValue(sampleAtomValue);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,14 +22,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        Hello World <br />
-        {sampleAtom} <br />
-        <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button> <br />
-        </Stack>
-        <a href="/about">about</a>
+        <a href="/">Home</a>
+        {sampleAtom}
       </main>
 
       <footer className={styles.footer}>
