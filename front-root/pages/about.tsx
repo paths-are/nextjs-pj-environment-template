@@ -1,14 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "@/src/styles/Home.module.css";
 
 import { atom, useRecoilValue } from "recoil";
-
-export const sampleAtomValue = atom({
-  key: "SampleAtomValue",
-  default: "Hello Atom!",
-});
+import { sampleAtomValue } from "@/src/recoilStates";
 
 const Home: NextPage = () => {
   const sampleAtom = useRecoilValue(sampleAtomValue);

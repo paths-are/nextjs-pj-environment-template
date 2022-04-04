@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "@/src/styles/Home.module.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useRecoilValue } from "recoil";
-import { sampleAtomValue } from "./about";
+import { sampleAtomValue } from "@/src/recoilStates";
 
 const Home: NextPage = () => {
   const sampleAtom = useRecoilValue(sampleAtomValue);
