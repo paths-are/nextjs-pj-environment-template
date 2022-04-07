@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "start_3001": "next start -p 3001",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.3",
+    "firebase": "^9.6.10",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",

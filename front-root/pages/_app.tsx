@@ -7,6 +7,12 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "@/src/mui/theme";
 import createEmotionCache from "@/src/mui/createEmotionCache";
 import { RecoilRoot } from "recoil";
+import { getAnalytics } from "firebase/analytics";
+import { app } from "@/src/firebase/init";
+
+if (typeof window !== "undefined") {
+  getAnalytics(app);
+}
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
