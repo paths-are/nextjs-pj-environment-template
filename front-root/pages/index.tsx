@@ -7,8 +7,14 @@ import Button from "@mui/material/Button";
 import { useRecoilValue } from "recoil";
 import { sampleAtomValue } from "@/src/recoilStates";
 
+import LogoutButton from "@/src/components/LogoutButton";
+import { useUser } from "@/src/hooks/auth";
+import LoginForm from "@/src/components/LoginForm";
+
 const Home: NextPage = () => {
+  const user: any = useUser();
   const sampleAtom = useRecoilValue(sampleAtomValue);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +23,25 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {!user ? (
+        <>
+          <div
+            style={{
+              height: "100vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <LoginForm />
+          </div>
+        </>
+      ) : (
+        <>
+          <LogoutButton />
+          <p>Hello {user.displayName}</p>
+        </>
+      )}
       <main className={styles.main}>
         Hello World <br />
         {sampleAtom} <br />
