@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/src/styles/Home.module.css";
 
-import { atom, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { sampleAtomValue } from "@/src/recoilStates";
 
 const Home: NextPage = () => {
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <a href="/">Home</a>
+        <Link href="/">Home</Link>
         {sampleAtom}
       </main>
 

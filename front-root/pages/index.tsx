@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/src/styles/Home.module.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -43,14 +44,11 @@ const Home: NextPage = () => {
         </>
       )}
       <main className={styles.main}>
-        Hello World <br />
         {sampleAtom} <br />
         <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button> <br />
+          <Button variant="contained">MUI Contained Button</Button>
         </Stack>
-        <a href="/about">about</a>
+        <Link href="/about">about</Link>
       </main>
 
       <footer className={styles.footer}>
