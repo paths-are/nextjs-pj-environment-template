@@ -6,11 +6,11 @@ import styles from "@/src/styles/Home.module.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { useRecoilValue } from "recoil";
-import { sampleAtomValue } from "@/src/recoilStates";
-
-import LogoutButton from "@/src/components/LogoutButton";
+import { sampleAtomValue } from "@/sample/recoilStates";
 import { useUser } from "@/src/hooks/auth";
-import LoginForm from "@/src/components/LoginForm";
+import LogoutButton from "@/sample/components/LogoutButton";
+import LoginForm from "@/sample/components/LoginForm";
+import InsertFirestoreButton from "@/sample/components/InsertFirestoreButton";
 
 const Home: NextPage = () => {
   const user: any = useUser();
@@ -34,6 +34,7 @@ const Home: NextPage = () => {
               alignItems: "center",
             }}
           >
+            <InsertFirestoreButton />
             <LoginForm />
           </div>
         </>
@@ -49,6 +50,7 @@ const Home: NextPage = () => {
           <Button variant="contained">MUI Contained Button</Button>
         </Stack>
         <Link href="/about">about</Link>
+        <Link href="/sample">to sample</Link>
       </main>
 
       <footer className={styles.footer}>

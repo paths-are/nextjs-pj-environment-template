@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "@/src/styles/Home.module.css";
 
 import { useRecoilValue } from "recoil";
-import { sampleAtomValue } from "@/src/recoilStates";
+import { sampleAtomValue } from "@/sample/recoilStates";
 
 const Home: NextPage = () => {
   const sampleAtom = useRecoilValue(sampleAtomValue);
