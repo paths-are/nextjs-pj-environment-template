@@ -29,6 +29,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {`モードは「${process.env.NEXT_PUBLIC_MODE}」です`}
+
       {!user ? ( // ログインしていない場合はログインフォームを表示
         <Container
           sx={{ height: "100vh", display: "flex", alignItems: "center" }}
