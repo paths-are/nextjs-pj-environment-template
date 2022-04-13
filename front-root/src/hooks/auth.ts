@@ -5,20 +5,15 @@ import {
   getAuth,
   signOut,
   onAuthStateChanged,
-  connectAuthEmulator,
   createUserWithEmailAndPassword,
+  connectAuthEmulator,
 } from "firebase/auth";
 
-import { app } from "@/src/firebase/init";
+import { app } from "@/src/libs/initFirebase";
 
 export const auth = getAuth(app);
-if (process.env.NODE_ENV === "development") {
-  connectAuthEmulator(auth, "http://localhost:9099");
-}
-// if (process.env.NEXT_PUBLIC_MODE_AUTH !== "PROD") {
-//   if (process.env.NEXT_PUBLIC_MODE === "LOCAL_DEVELOP") {
-//     connectAuthEmulator(auth, "http://localhost:9099");
-//   }
+// if (process.env.NODE_ENV === "development") {
+//   connectAuthEmulator(auth, "http://localhost:9099");
 // }
 
 type UserState = User | null;
@@ -30,7 +25,7 @@ const userState = atom<UserState>({
 });
 
 export const createAccount = (state: string): Promise<void> => {
-  const email = "one.click.creater@gmail.com";
+  const email = "abc@gmail.com";
   const pass = "password";
 
   return createUserWithEmailAndPassword(auth, email, pass)

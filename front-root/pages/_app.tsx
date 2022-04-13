@@ -3,11 +3,11 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import theme from "@/src/mui/theme";
-import createEmotionCache from "@/src/mui/createEmotionCache";
+import theme from "@/src/libs/mui/theme";
+import createEmotionCache from "@/src/libs/mui/createEmotionCache";
 import { RecoilRoot } from "recoil";
 import { getAnalytics } from "firebase/analytics";
-import { app } from "@/src/firebase/init";
+import { app } from "@/src/libs/initFirebase";
 import { useAuth } from "@/src/hooks/auth";
 
 if (typeof window !== "undefined") {
