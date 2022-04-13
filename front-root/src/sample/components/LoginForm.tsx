@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState<null | string>(null);
+  const [email, setEmail] = useState<string>("");
 
   const onChange = (e: any) => {
     setEmail(e.target.value);
