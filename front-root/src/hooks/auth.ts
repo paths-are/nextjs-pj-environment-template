@@ -6,7 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
-  connectAuthEmulator,
+  // connectAuthEmulator,
 } from "firebase/auth";
 
 import { app } from "@/src/libs/initFirebase";
