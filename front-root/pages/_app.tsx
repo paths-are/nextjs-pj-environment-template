@@ -19,7 +19,8 @@ if (typeof window !== "undefined") {
 const Notify = () => {
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({ title: "", body: "" });
-  const [isTokenFound, setTokenFound] = useState(false);
+  // const [isTokenFound, setTokenFound] = useState(false);
+  const [isTokenFound, setTokenFound] = useState(null);
   fetchToken(setTokenFound);
   onMessageListener()
     .then((payload) => {
@@ -35,7 +36,7 @@ const Notify = () => {
   // {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
   // {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
   return isTokenFound ? (
-    <h1> Notification permission enabled 👍🏻 </h1>
+    <h1> Notification permission enabled 👍🏻 token is : {isTokenFound} </h1>
   ) : (
     <h1> Need notification permission ❗️ </h1>
   );
