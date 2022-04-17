@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
-import { app } from "@/src/libs/initFirebase";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
+import { app } from "@/src/utils/initFirebase";
 
 const InsertFirestoreButton = () => {
   const onClickHandler = async () => {

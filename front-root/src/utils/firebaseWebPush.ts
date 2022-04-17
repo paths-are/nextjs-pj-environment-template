@@ -1,5 +1,5 @@
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-import { app } from "@/src/libs/initFirebase";
+import { app } from "@/src/utils/initFirebase";
 
 export const fetchToken = (setTokenFound: (token: string | null) => void) => {
   const fcmMessaging = getMessaging(app);

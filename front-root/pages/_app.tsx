@@ -4,13 +4,13 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import theme from "@/src/libs/mui/theme";
-import createEmotionCache from "@/src/libs/mui/createEmotionCache";
+import theme from "@/src/utils/mui/theme";
+import createEmotionCache from "@/src/utils/mui/createEmotionCache";
 import { RecoilRoot } from "recoil";
 import { getAnalytics } from "firebase/analytics";
-import { app } from "@/src/libs/initFirebase";
+import { app } from "@/src/utils/initFirebase";
 import { useAuth } from "@/src/hooks/auth";
-import { fetchToken, onMessageListener } from "@/src/libs/firebaseWebPush";
+import { fetchToken, onMessageListener } from "@/src/utils/firebaseWebPush";
 
 if (typeof window !== "undefined") {
   getAnalytics(app);

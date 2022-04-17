@@ -9,7 +9,7 @@ import {
   // connectAuthEmulator,
 } from "firebase/auth";
 
-import { app } from "@/src/libs/initFirebase";
+import { app } from "@/src/utils/initFirebase";
 
 export const auth = getAuth(app);
 // if (process.env.NODE_ENV === "development") {

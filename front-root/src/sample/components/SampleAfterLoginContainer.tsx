@@ -1,15 +1,9 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-import { auth } from "@/src/hooks/auth";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
-import { addProduct } from "@/src/libs/firestoreProduct";
+import { addProduct } from "@/src/utils/firestoreProduct";
 
 const SampleAfterLoginContainer = () => {
   const [productName, setProductName] = useState<string>("");
