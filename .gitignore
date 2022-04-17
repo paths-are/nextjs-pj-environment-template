@@ -33,3 +33,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# firebase
+/firebase/bin/
+/firebase/config/
+/firebase/emulators/functions/secrets/
+
+# next-pwa
+/front-root/public/workbox*
+/front-root/public/sw*

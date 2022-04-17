@@ -3,17 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/src/styles/Home.module.css";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+
 import { useRecoilValue } from "recoil";
 import { sampleAtomValue } from "@/sample/recoilStates";
-import { useUser } from "@/src/hooks/auth";
-import LogoutButton from "@/sample/components/LogoutButton";
-import LoginForm from "@/sample/components/LoginForm";
-import InsertFirestoreButton from "@/sample/components/InsertFirestoreButton";
 
 const Home: NextPage = () => {
-  const user: any = useUser();
   const sampleAtom = useRecoilValue(sampleAtomValue);
 
   return (
@@ -24,33 +18,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {!user ? (
-        <>
-          <div
-            style={{
-              height: "100vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <InsertFirestoreButton />
-            <LoginForm />
-          </div>
-        </>
-      ) : (
-        <>
-          <LogoutButton />
-          <p>Hello {user.displayName}</p>
-        </>
-      )}
       <main className={styles.main}>
-        {sampleAtom} <br />
-        <Stack spacing={2} direction="row">
-          <Button variant="contained">MUI Contained Button</Button>
-        </Stack>
-        <Link href="/about">about</Link>
-        <Link href="/sample">to sample</Link>
+        <Link href="/">Home</Link>
+        {sampleAtom}
       </main>
 
       <footer className={styles.footer}>
