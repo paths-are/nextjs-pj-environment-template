@@ -1,28 +1,23 @@
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-// import { getMessaging } from "firebase/messaging/sw";
 import { app } from "@/src/libs/initFirebase";
 
-export const fetchToken = (setTokenFound) => {
+export const fetchToken = (setTokenFound: (token: string | null) => VoidFunction) => {
   const fcmMessaging = getMessaging(app);
 
-  const VAPID_KEY =
-    "BCV_vRBnJ11osR-x85XXcpXCfgPEpsXqTQJWd3xfKa2vZ1jTbywsS5VaqnETzhWh2pPPm3xjgKRLyiXzsepZZhc";
   return getToken(fcmMessaging, {
-    vapidKey: VAPID_KEY,
+    vapidKey: process.env.NEXT_PUBLIC_VAPID_KEY,
   })
     .then((currentToken) => {
       if (currentToken) {
         console.log("current token for client: ", currentToken);
-        // setTokenFound(true);
         setTokenFound(currentToken);
-        // return currentToken
         // Track the token -> client mapping, by sending to backend server
         // show on the UI that permission is secured
       } else {
         console.log(
           "No registration token available. Request permission to generate one."
         );
-        setTokenFound(false);
+        setTokenFound(null);
         // shows on the UI that permission is required
       }
     })
