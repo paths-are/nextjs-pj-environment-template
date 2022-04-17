@@ -1,7 +1,7 @@
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { app } from "@/src/libs/initFirebase";
 
-export const fetchToken = (setTokenFound: (token: string | null) => VoidFunction) => {
+export const fetchToken = (setTokenFound: (token: string | null) => void) => {
   const fcmMessaging = getMessaging(app);
 
   return getToken(fcmMessaging, {

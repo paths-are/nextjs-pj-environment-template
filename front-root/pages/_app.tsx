@@ -20,7 +20,7 @@ const Notify = () => {
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({ title: "", body: "" });
   // const [isTokenFound, setTokenFound] = useState(false);
-  const [isTokenFound, setTokenFound] = useState(null);
+  const [isTokenFound, setTokenFound] = useState<string | null>(null);
   fetchToken(setTokenFound);
   onMessageListener()
     .then((payload: any) => {
