@@ -20,10 +20,10 @@ const Notify = () => {
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({ title: "", body: "" });
   // const [isTokenFound, setTokenFound] = useState(false);
-  const [isTokenFound, setTokenFound] = useState(null);
+  const [isTokenFound, setTokenFound] = useState<string | null>(null);
   fetchToken(setTokenFound);
   onMessageListener()
-    .then((payload) => {
+    .then((payload: any) => {
       setNotification({
         title: payload.notification.title,
         body: payload.notification.body,
@@ -32,9 +32,7 @@ const Notify = () => {
       alert(payload.notification.body);
       console.log(payload);
     })
-    .catch((err) => console.log("failed: ", err));
-  // {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
-  // {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
+    .catch((err: any) => console.log("failed: ", err));
   return isTokenFound ? (
     <h1> Notification permission enabled 👍🏻 token is : {isTokenFound} </h1>
   ) : (

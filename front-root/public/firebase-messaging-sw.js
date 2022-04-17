@@ -4,14 +4,13 @@ importScripts("https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js");
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 firebase.initializeApp({
-  apiKey: "AIzaSyDH6r-5P47nSAMF2e5MX9mG_jlP_GJijS0",
-  authDomain: "nextjsprojecttemplate.firebaseapp.com",
-  databaseURL: "https://nextjsprojecttemplate-default-rtdb.firebaseio.com",
-  projectId: "nextjsprojecttemplate",
-  storageBucket: "nextjsprojecttemplate.appspot.com",
-  messagingSenderId: "797170251988",
-  appId: "1:797170251988:web:8ce84d6ce93f62efbd2341",
-  measurementId: "G-CMCNRE5YYG",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
@@ -23,10 +22,10 @@ messaging.onBackgroundMessage(function (payload) {
     "[firebase-messaging-sw.js] Received background message ",
     payload
   );
-  // Customize notification here
-  const notificationTitle = "Background Message Title";
+  // // Customize notification here
+  // const notificationTitle = "Background Message Title";
   const notificationOptions = {
-    body: "Background Message body.",
+    body: "通知があります。ご確認ください。",
     icon: "/firebase-logo.png",
   };
 
