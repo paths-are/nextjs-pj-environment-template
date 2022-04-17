@@ -1,4 +1,4 @@
-import { app } from "@/src/libs/initFirebase";
+import { app } from "@/src/utils/initFirebase";
 import {
   // doc,
   addDoc,

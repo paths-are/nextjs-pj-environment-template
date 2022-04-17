@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { getApp, FirebaseApp } from 'firebase/app'
 
-import '@/src/libs/initFirebase' // Initialize FirebaseApp
+import '@/src/utils/initFirebase' // Initialize FirebaseApp
 
 const Home: NextPage = () => {
   const app: FirebaseApp = getApp()
