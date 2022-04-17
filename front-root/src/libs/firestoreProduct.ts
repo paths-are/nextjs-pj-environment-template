@@ -1,8 +1,8 @@
 import { app } from "@/src/libs/initFirebase";
 import {
-  doc,
+  // doc,
   addDoc,
-  setDoc,
+  // setDoc,
   getFirestore,
   collection,
 } from "firebase/firestore";
@@ -14,7 +14,7 @@ const db = getFirestore(app);
 //   connectFirestoreEmulator(db, "localhost", 8080);
 // }
 
-export const addProduct = async ({ uid, productName }: any) => {
+export const addProduct = async ({ /* uid,*/ productName }: any) => {
   const now = new Date();
 
   return await addDoc(collection(db, "products"), {
